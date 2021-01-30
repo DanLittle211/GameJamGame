@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36968f715771d4d11b59f0cb410662a6, type: 3}
   m_Name: HealingPotion
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 7350463634641089893, guid: c01d33005b4454ad08960eefe1a9dbb4, type: 3}
   type: 1
   description: 

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08768d4127673423da37d2e714953343, type: 3}
   m_Name: DanketsuHilt
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 3055285173068698505, guid: 897cf1ff9d89742bda61b6902bc8a1cf, type: 3}
   type: 2
   description: 

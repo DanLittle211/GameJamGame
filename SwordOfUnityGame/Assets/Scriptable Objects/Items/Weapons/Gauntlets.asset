@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc2e092a5c7f4e928ffbb34359f96c7, type: 3}
   m_Name: Gauntlets
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 5635373388201550110, guid: 6543fe7b93db14ad48182a11f138c177, type: 3}
   type: 0
   description: 
   Damage: 1

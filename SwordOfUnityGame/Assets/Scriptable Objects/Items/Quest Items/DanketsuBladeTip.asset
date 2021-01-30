@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08768d4127673423da37d2e714953343, type: 3}
   m_Name: DanketsuBladeTip
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 579440724108177182, guid: 8218c4d9e43b7437c82761d6a1a4616f, type: 3}
   type: 2
   description: 
