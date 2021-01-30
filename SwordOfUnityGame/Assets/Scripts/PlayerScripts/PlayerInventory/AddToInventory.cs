@@ -14,7 +14,7 @@ public class AddToInventory : MonoBehaviour
     public ItemObjects DanketsuBladeTip;
     public ItemObjects DanketsuHilt;
     #endregion
-
+    //Adding Items to Inventory
     public void AddHealingPot()
     {
         inventory.AddItem(HealingPotion, 1);
@@ -42,5 +42,10 @@ public class AddToInventory : MonoBehaviour
     public void AddDanketsuHilt()
     {
         inventory.AddItem(DanketsuHilt, 1);
+    }
+    //Using Items
+    public void UseHealingPot()
+    {
+        inventory.SubtractItem(HealingPotion, 1);
     }
 }
