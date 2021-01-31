@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Strangle : AttackTypes
 {
-    // Start is called before the first frame update
-    void Start()
+    public int Damage;
+    public Snake snake;
+    public void Awake()
     {
-        
+        D_Type = DamageType.Dexerity;
+        A_Type = AttackType.PureDamage;
+        Damage = snake.DexerityScore;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void doStrangle()
     {
-        
+        Debug.Log("Snake used Stangle");
+        pStatsMang.currentHealth -= Damage;
     }
 }

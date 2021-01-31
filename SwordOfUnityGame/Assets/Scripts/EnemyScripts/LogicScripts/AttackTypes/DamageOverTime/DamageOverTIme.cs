@@ -5,4 +5,5 @@ using UnityEngine;
 public abstract class DamageOverTIme : AttackTypes
 {
     public byte RoundCounter;
+    public byte DOTDamge;
 }

@@ -13,7 +13,8 @@ public class CombatManager : MonoBehaviour
     public whichEnemy currentEnemy;
     #endregion
     #region Variables
-    public byte currentDOTdamage;
+    public int currentDOTdamage;
+    public int BuffCounter;
     #endregion
     #region Bools
     public bool PlayerWent;
@@ -37,6 +38,8 @@ public class CombatManager : MonoBehaviour
     {
        if(StateManager.currentWorldState == GameStateManager.WorldState.Combat_State)
         {
+            //health updates
+            
             //enemy's turn
             if (CurrentTurn == whoseTurn.EnemyTurn)
             {
@@ -50,6 +53,11 @@ public class CombatManager : MonoBehaviour
                         Debug.Log("Snake: Switched to MainPhase");
                         currentPhase = CombatPhases.Main_Phase;
                     }
+                    if(currentEnemy == whichEnemy.Bear)
+                    {
+                        bearLogic.chooseAttack();
+                        currentPhase = CombatPhases.Main_Phase;
+                    }
                 }
                 if (currentPhase == CombatPhases.Main_Phase)
                 {
@@ -57,6 +65,10 @@ public class CombatManager : MonoBehaviour
                     if(currentEnemy == whichEnemy.Snake)
                     {
                         snakeLogic.doAttack();
+                    }
+                    if (currentEnemy == whichEnemy.Bear)
+                    {
+                        bearLogic.doAttack();
                     }
                     if (EnemyWent)
                     {
@@ -105,6 +117,7 @@ public class CombatManager : MonoBehaviour
     void EnemyCounterTick()
     {
         Debug.Log("Enemy Counters Ticked");
+        BuffCounter -= 1;
         CurrentTurn = whoseTurn.PlayerTurn;
         currentPhase = CombatPhases.Start_Phase;
     }
@@ -116,7 +129,7 @@ public class CombatManager : MonoBehaviour
         CurrentTurn = whoseTurn.EnemyTurn;
         currentPhase = CombatPhases.Start_Phase;
     }
-   public void PlayerTakeDOT(byte DOT_Damage)
+   public void PlayerTakeDOT(int DOT_Damage)
     {
         pStatsMang.currentHealth -= DOT_Damage;
     }

@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class SnakeBite : AttackTypes
 {
-    // Start is called before the first frame update
-    void Start()
+    public int Damage;
+    public Snake snake;
+    private void Awake()
     {
-        
+        D_Type = DamageType.Dexerity;
+        A_Type = AttackType.PureDamage;
+        Damage = snake.DexerityScore;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void doSnakeBite()
     {
-        
+        Debug.Log("Snake use Snake Bite");
+        pStatsMang.currentHealth -= Damage;
     }
 }
