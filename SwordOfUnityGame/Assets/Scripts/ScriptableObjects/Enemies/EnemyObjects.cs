@@ -7,9 +7,9 @@ public class EnemyObjects : ScriptableObject
 {
     public GameObject prefab;
     public Location place;
-    public byte StrengthScore;
-    public byte DexerityScore;
-    public byte IntelegenceScore;
-    public byte MaxHealth;
-    public byte CurrentHealth;
+    public int StrengthScore;
+    public int DexerityScore;
+    public int IntelegenceScore;
+    public int MaxHealth;
+    public int CurrentHealth;
 }

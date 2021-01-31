@@ -6,11 +6,11 @@ using UnityEngine;
 public class PlayerStatisticsManager : MonoBehaviour
 {
     #region Player Stats
-    public byte StrengthScore = 1;
-    public byte DexertityScore = 1;
-    public byte IntelegenceScore = 1;
-    public byte PlayerHealth = 6;
-    public byte currentHealth;
+    public int StrengthScore = 1;
+    public int DexertityScore = 1;
+    public int IntelegenceScore = 1;
+    public int PlayerHealth = 6;
+    public int currentHealth;
     #endregion
     #region Menu UI Elements
     public Text MaxHealth_MenuText;
