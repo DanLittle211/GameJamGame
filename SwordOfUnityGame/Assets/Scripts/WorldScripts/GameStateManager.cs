@@ -12,10 +12,23 @@ public class GameStateManager : MonoBehaviour
     public GameObject OverworldCanvas;
     public GameObject CombatCanvas;
     #endregion
+    #region Which level
+    public bool inForest = false;
+    public bool inCaves = false;
+    public bool inCastle = false;
+    public GameObject ForestLevel;
+    public GameObject ForestCombatZone;
+    public GameObject CaveLevel;
+    public GameObject CaveCombatZone;
+    public GameObject CastleLevel;
+    public GameObject CastleCombatZone;
+    #endregion
     private void Awake()
     {
-        //starting out in the overworld 
+        //starting out in the overworld & on the forest level
         currentWorldState = WorldState.Overworld_State;
+        inForest = true;
+
     }
     // Update is called once per frame
     void Update()
@@ -37,6 +50,39 @@ public class GameStateManager : MonoBehaviour
         {
             OverworldCanvas.SetActive(true);
             CombatCanvas.SetActive(false);
+        }
+        // what happens if inForest is true or false
+        if (inForest)
+        {
+            ForestLevel.SetActive(true);
+            ForestCombatZone.SetActive(true);
+        }
+        else if (!inForest)
+        {
+            ForestLevel.SetActive(false);
+            ForestCombatZone.SetActive(false);
+        }
+        //What happens if inCave is true or false
+        if (inCaves)
+        {
+            CaveLevel.SetActive(true);
+            CaveCombatZone.SetActive(true);
+        }
+        else if (!inCaves)
+        {
+            CaveLevel.SetActive(false);
+            CaveCombatZone.SetActive(false);
+        }
+        //what happens if inCastle is true or false
+        if (inCastle)
+        {
+            CastleLevel.SetActive(true);
+            CastleCombatZone.SetActive(true);
+        }
+        if (!inCastle)
+        {
+            CastleLevel.SetActive(false);
+            CastleCombatZone.SetActive(false);
         }
     }
 }
