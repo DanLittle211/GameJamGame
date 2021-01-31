@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     #endregion
     #region Script References
     public GameStateManager State_Mang;
+    public CombatManager CombatManager;
     #endregion
     // Update is called once per frame
     void Update()
@@ -45,6 +46,10 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             State_Mang.currentWorldState = GameStateManager.WorldState.Combat_State;
+        }
+        if(collision.gameObject.name == "Enemy_Snake")
+        {
+            CombatManager.currentEnemy = CombatManager.whichEnemy.Snake;
         }
     }
 }

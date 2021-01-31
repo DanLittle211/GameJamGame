@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class SnakeLogic : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float currentAttack;
+    public CombatManager combatManager;
+    private void Awake()
     {
-        
+        combatManager = GameObject.Find("GameManager").GetComponent<CombatManager>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+       
+    }
+    public void chooseAttack()
+    {
+       currentAttack = Mathf.Round(Random.Range(1, 7));
+        Debug.Log("Snake Chose: " + currentAttack);
+    }
+    public void doAttack()
+    {
+        Debug.Log("Snake Attacked");
+        combatManager.EnemyWent = true;
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageOverTIme : AttackLogic
+public abstract class DamageOverTIme : AttackTypes
 {
     public byte RoundCounter;
 }

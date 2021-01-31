@@ -9020,7 +9020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &496436388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16340,7 +16340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &900451111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18296,6 +18296,8 @@ GameObject:
   - component: {fileID: 979843441}
   - component: {fileID: 979843442}
   - component: {fileID: 979843443}
+  - component: {fileID: 979843445}
+  - component: {fileID: 979843444}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -18407,6 +18409,49 @@ MonoBehaviour:
   DanketsuBladePiece: {fileID: 11400000, guid: 034617c3280444f3588cf0f22db0b12b, type: 2}
   DanketsuBladeTip: {fileID: 11400000, guid: 64d1c55b52bf34dd3bd71569cb535f40, type: 2}
   DanketsuHilt: {fileID: 11400000, guid: d0eb2eb8922cb4c01bc63d19ace45dc7, type: 2}
+--- !u!114 &979843444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979843438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55876e56bfee848418fb5a7e1613dc66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebuffed: 0
+  DebuffCounter: 0
+  hasDOT: 0
+  DOTCounter: 0
+  Blocking: 0
+  BlockingCounter: 0
+  StateManager: {fileID: 979843441}
+--- !u!114 &979843445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979843438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b72bdd936b9a4598bba5a82e4d290ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentTurn: 0
+  currentPhase: 0
+  currentEnemy: 0
+  currentDOTdamage: 0
+  PlayerWent: 0
+  EnemyWent: 0
+  snakeLogic: {fileID: 1751962046}
+  wolfLogic: {fileID: 0}
+  bearLogic: {fileID: 0}
+  PlayerStatuses: {fileID: 979843444}
+  pStatsMang: {fileID: 979843439}
+  StateManager: {fileID: 979843441}
 --- !u!1001 &984516375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24923,6 +24968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1328568461}
   State_Mang: {fileID: 979843441}
+  CombatManager: {fileID: 979843445}
 --- !u!212 &1328568463
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24981,7 +25027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328568461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.55, y: 0.76, z: 0}
+  m_LocalPosition: {x: 2.12, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 816790282}
@@ -32822,13 +32868,14 @@ GameObject:
   - component: {fileID: 1751962042}
   - component: {fileID: 1751962045}
   - component: {fileID: 1751962044}
+  - component: {fileID: 1751962046}
   m_Layer: 0
-  m_Name: TempEnemyObject
+  m_Name: Enemy_Snake
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1751962042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32940,6 +32987,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1751962046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751962041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4b4461da9ab45649d3287d4042d3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAttack: 0
+  combatManager: {fileID: 979843445}
 --- !u!4 &1754155008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 440940274051819105, guid: c06642e3d5cde43348ba386c1274bb45,

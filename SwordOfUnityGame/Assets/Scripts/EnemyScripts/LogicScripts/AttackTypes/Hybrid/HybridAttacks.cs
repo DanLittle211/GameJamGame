@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HybridAttacks : AttackLogic
+public class HybridAttacks : AttackTypes
 {
     public enum AType {Buff, Debuff, Both}
     public byte RoubdCounter;
