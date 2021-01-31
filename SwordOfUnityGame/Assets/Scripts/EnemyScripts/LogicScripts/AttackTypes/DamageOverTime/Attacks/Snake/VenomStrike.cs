@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class VenomStrike : DamageOverTIme
 {
+    public CombatManager combatManager;
     private void Awake()
     {
         D_Type = DamageType.Dexerity;

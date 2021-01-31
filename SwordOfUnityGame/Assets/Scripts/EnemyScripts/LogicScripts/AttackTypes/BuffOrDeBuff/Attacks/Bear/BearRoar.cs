@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BearRoar : Buff_Debuffs
 {
+    public CombatManager combatManager;
     public BearLogic bearLogic;
     private void Awake()
     {
