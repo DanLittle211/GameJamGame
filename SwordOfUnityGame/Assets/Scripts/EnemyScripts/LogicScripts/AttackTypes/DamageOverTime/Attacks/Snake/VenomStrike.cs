@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class VenomStrike : DamageOverTIme
 {
-   A_Type = 
+   
 }

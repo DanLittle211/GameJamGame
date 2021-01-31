@@ -11,6 +11,15 @@ public class PlayerMovement : MonoBehaviour
     public GameStateManager State_Mang;
     public CombatManager CombatManager;
     #endregion
+
+    private AudioSource playerSound;
+
+    // this function is called once
+    void Start()
+    {
+        playerSound = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
